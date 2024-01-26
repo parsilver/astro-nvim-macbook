@@ -39,8 +39,8 @@ return {
   },
   i = {
     -- Mappings the copilot plugin
-    ["<F1>"] = { 'copilot#Accept("<CR>")', silent = true, expr = true },
-    ["<F2>"] = { 'copilot#Next()', silent = true, expr = true },
-    ["<F3>"] = { 'copilot#Previous()', silent = true, expr = true },
+    ["<C-l>"] = { 'copilot#Accept("<CR>")', silent = true, expr = true, noremap = true, replace_keycodes = false },
+    ["<C-j>"] = { 'copilot#Next()', silent = true, expr = true },
+    ["<C-k>"] = { 'copilot#Previous()', silent = true, expr = true },
   },
 }
