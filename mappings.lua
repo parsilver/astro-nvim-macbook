@@ -37,4 +37,10 @@ return {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+  i = {
+    -- Mappings the copilot plugin
+    ["<F1>"] = { 'copilot#Accept("<CR>")', silent = true, expr = true },
+    ["<F2>"] = { 'copilot#Next()', silent = true, expr = true },
+    ["<F3>"] = { 'copilot#Previous()', silent = true, expr = true },
+  },
 }
