@@ -7,4 +7,5 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.php" },
+  { import = "astrocommunity.scrolling.mini-animate" },
 }
