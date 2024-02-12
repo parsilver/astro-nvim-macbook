@@ -4,7 +4,6 @@
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
 return {
-  -- first key is the mode
   n = {
     -- second key is the lefthand side of the map
 
@@ -30,17 +29,24 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+
     -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
+
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+
   },
+
   i = {
-    -- Mappings the copilot plugin
-    ["<C-l>"] = { 'copilot#Accept("<CR>")', silent = true, expr = true, noremap = true, replace_keycodes = false },
-    ["<C-j>"] = { 'copilot#Next()', silent = true, expr = true },
-    ["<C-k>"] = { 'copilot#Previous()', silent = true, expr = true },
+    -- 
+  },
+
+  v = {
+    -- Move selected line / block of text in visual mode
+    ["<C-j>"] = { ":m '>+1<CR>gv=gv", desc = "Move line/block down" },
+    ["<C-k>"] = { ":m '<-2<CR>gv=gv", desc = "Move line/block up" },
   },
 }
