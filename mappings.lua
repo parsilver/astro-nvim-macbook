@@ -7,15 +7,19 @@ return {
   n = {
     -- second key is the lefthand side of the map
 
-    -- navigate buffer tabs with `H` and `L`
-    -- L = {
-    --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-    --   desc = "Next buffer",
-    -- },
-    -- H = {
-    --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    --   desc = "Previous buffer",
-    -- },
+    -- navigate buffer tabs with `H`, `L` and `<TAB>`
+    L = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    H = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
+    ["<TAB>"] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
@@ -37,10 +41,15 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+
+    ["<C-x>"] = { "<C-\\><C-n>", desc = "Cancel terminal" },
+    ["<C-c>"] = { "<C-\\><C-n>:bd!<CR>", desc = "Force close terminal" },
   },
 
   i = {
-    -- 
+    -- Move selected line / block of text in insert mode
+    ["<C-j>"] = { "<esc>:m .+1<CR>==gi", desc = "Move line/block down" },
+    ["<C-k>"] = { "<esc>:m .-2<CR>==gi", desc = "Move line/block up" },
   },
 
   v = {
