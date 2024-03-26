@@ -20,7 +20,8 @@ return {
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.rust" },
 
   -- Support package
-  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  -- { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
 }
